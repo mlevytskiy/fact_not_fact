@@ -56,6 +56,9 @@ jobs:
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
+        permissions:
+          contents: read
+          pages: write
         with:
           github_token: ${{ secrets.DEPENDABOT_TOKEN }}
           folder: build/web

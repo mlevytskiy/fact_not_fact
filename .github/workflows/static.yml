@@ -57,7 +57,7 @@ jobs:
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.ACTION_DEPLOY_KEY }}
+          github_token: ${{ secrets.ACTION_DEPLOY_KEY }}
           folder: build/web
 
 #      - name: Upload artifact

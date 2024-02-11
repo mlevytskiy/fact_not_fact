@@ -51,12 +51,20 @@ jobs:
       - name: Download pub dependencies
         run: flutter pub get
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Build Web App
+        run: flutter build web
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: build/web
+
+#      - name: Upload artifact
+#        uses: actions/upload-pages-artifact@v3
+#        with:
+#          # Upload entire repository
+#          path: '.'
+#      - name: Deploy to GitHub Pages
+#        id: deployment
+#        uses: actions/deploy-pages@v4
 
